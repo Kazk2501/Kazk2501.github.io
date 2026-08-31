@@ -50,19 +50,10 @@ const grid = document.querySelector("#gift-grid");
 const emptyState = document.querySelector("#empty-state");
 const count = document.querySelector("#item-count");
 const searchInput = document.querySelector("#search-input");
-const panel = document.querySelector("#add-panel");
-const form = document.querySelector("#gift-form");
 
 document.querySelector("#footer-year").textContent = new Date().getFullYear();
-document.querySelector("#open-form").addEventListener("click", () => {
-  panel.hidden = false;
-  panel.scrollIntoView({ behavior: "smooth", block: "center" });
-  document.querySelector("#gift-name").focus();
-});
-document.querySelector("#close-form").addEventListener("click", () => { panel.hidden = true; });
 searchInput.addEventListener("input", render);
 grid.addEventListener("click", handleCardClick);
-form.addEventListener("submit", addGift);
 
 function loadGifts() {
   try {
@@ -106,24 +97,6 @@ function handleCardClick(event) {
   gifts.splice(Number(button.dataset.delete), 1);
   saveGifts();
   render();
-}
-
-function addGift(event) {
-  event.preventDefault();
-  const data = new FormData(form);
-  gifts.unshift({
-    name: data.get("name").trim(),
-    description: data.get("description").trim(),
-    image: data.get("image").trim(),
-    link: data.get("link").trim() || "#",
-    tag: "New idea"
-  });
-  saveGifts();
-  form.reset();
-  panel.hidden = true;
-  searchInput.value = "";
-  render();
-  document.querySelector("#gift-grid").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function escapeHtml(value) {
