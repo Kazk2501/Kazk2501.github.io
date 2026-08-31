@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kaz's living gift list for birthdays, celebrations, and just-because surprises.">
+  <title>Gifts for Kaz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Gifts for Kaz home">
+      <span class="brand-mark">K</span>
+      <span>Gifts for Kaz</span>
+    </a>
+    <span class="header-note">A living wish list <span aria-hidden="true">/</span> updated when inspiration strikes</span>
+  </header>
+
+  <main id="top">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow">Birthday · celebration · just because</p>
+        <h1>Good gifts<br><em>live here.</em></h1>
+        <p class="intro-text">A lovingly curated list of things I would be very happy to unwrap. Browse around, pick a favorite, and take all the credit.</p>
+      </div>
+      <div class="intro-aside">
+        <span class="scribble" aria-hidden="true">for the<br>thoughtful ones</span>
+        <div class="tiny-sparkle" aria-hidden="true">✳</div>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="Gift list controls">
+      <div class="list-count"><strong id="item-count">0</strong> <span>ideas to explore</span></div>
+      <div class="toolbar-actions">
+        <label class="search-wrap" for="search-input">
+          <span aria-hidden="true">⌕</span>
+          <input id="search-input" type="search" placeholder="Search the list..." autocomplete="off">
+        </label>
+        <button class="button button-dark" id="open-form" type="button"><span aria-hidden="true">+</span> Add an idea</button>
+      </div>
+    </section>
+
+    <section class="gift-grid" id="gift-grid" aria-live="polite"></section>
+    <p class="empty-state" id="empty-state" hidden>No ideas match that search. Try another word.</p>
+
+    <section class="add-panel" id="add-panel" aria-labelledby="form-title" hidden>
+      <div class="panel-heading">
+        <p class="eyebrow">Make the list better</p>
+        <h2 id="form-title">Add a good idea.</h2>
+        <button class="close-button" id="close-form" type="button" aria-label="Close add idea form">×</button>
+      </div>
+      <form id="gift-form">
+        <div class="form-fields">
+          <label>Item name <input id="gift-name" name="name" type="text" placeholder="Something wonderful" required></label>
+          <label>Why I want it <textarea id="gift-description" name="description" rows="3" placeholder="The little story behind this idea..." required></textarea></label>
+          <div class="form-row">
+            <label>Picture URL <input id="gift-image" name="image" type="url" placeholder="https://..."></label>
+            <label>Shop link <input id="gift-link" name="link" type="url" placeholder="https://..."></label>
+          </div>
+        </div>
+        <div class="form-footer">
+          <p>It will be saved in this browser.</p>
+          <button class="button button-coral" type="submit">Add to the list <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Made with excellent taste and very little subtlety.</span>
+    <span class="footer-line" aria-hidden="true"></span>
+    <span id="footer-year"></span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
