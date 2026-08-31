@@ -61,7 +61,6 @@ const starterGifts = [
 
 const storageKey = "gifts-for-kaz-list";
 let gifts = loadGifts();
-let selectedCategory = "Plushies";
 
 const grid = document.querySelector("#gift-grid");
 const emptyState = document.querySelector("#empty-state");
@@ -71,7 +70,7 @@ const categoryNav = document.querySelector("#category-nav");
 
 document.querySelector("#footer-year").textContent = new Date().getFullYear();
 searchInput.addEventListener("input", render);
-categoryNav.addEventListener("click", handleCategoryChange);
+categoryNav.addEventListener("click", handleCategoryNavClick);
 grid.addEventListener("click", handleCardClick);
 
 function loadGifts() {
@@ -89,48 +88,54 @@ function saveGifts() {
   localStorage.setItem(storageKey, JSON.stringify(gifts));
 }
 
-function handleCategoryChange(event) {
-  const button = event.target.closest("[data-category]");
-  if (!button) return;
+function handleCategoryNavClick(event) {
+  const link = event.target.closest("[data-category]");
+  if (!link) return;
 
-  selectedCategory = button.dataset.category;
-  updateCategoryButtons();
-  render();
-}
-
-function updateCategoryButtons() {
   const buttons = categoryNav.querySelectorAll(".category-button");
   buttons.forEach((button) => {
-    const isActive = button.dataset.category === selectedCategory;
+    const isActive = button.dataset.category === link.dataset.category;
     button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
   });
 }
 
 function render() {
   const query = searchInput.value.trim().toLowerCase();
-  const visibleGifts = gifts.filter((gift) => {
-    const matchesCategory = gift.category === selectedCategory;
+  const filteredGifts = gifts.filter((gift) => {
     const haystack = `${gift.name} ${gift.description} ${gift.tag}`.toLowerCase();
-    return matchesCategory && haystack.includes(query);
+    return haystack.includes(query);
   });
 
-  count.textContent = visibleGifts.length;
-  emptyState.hidden = visibleGifts.length !== 0;
-  grid.innerHTML = visibleGifts.map((gift) => {
-    const index = gifts.indexOf(gift);
-    return `<article class="gift-card" style="animation-delay: ${Math.min(index, 7) * 50}ms">
-      <div class="gift-image">
-        <img src="${escapeAttribute(gift.image || fallbackImage)}" alt="${escapeAttribute(gift.name)}" onerror="this.src='${fallbackImage}'">
-        <span class="gift-tag">${escapeHtml(gift.tag || "New idea")}</span>
-      </div>
-      <div class="gift-info">
-        <button class="delete-button" type="button" data-delete="${index}" aria-label="Remove ${escapeAttribute(gift.name)}">×</button>
-        <h2>${escapeHtml(gift.name)}</h2>
-        <p>${escapeHtml(gift.description)}</p>
-        <a class="gift-link" href="${safeUrl(gift.link)}" target="_blank" rel="noopener noreferrer">See the original <span aria-hidden="true">↗</span></a>
-      </div>
-    </article>`;
+  const totalVisible = filteredGifts.length;
+  count.textContent = totalVisible;
+  emptyState.hidden = totalVisible !== 0;
+
+  grid.innerHTML = categories.map((category) => {
+    const categoryGifts = filteredGifts.filter((gift) => gift.category === category);
+    const sectionId = `category-${category.replace(/\s+/g, "-")}`;
+
+    return `
+      <section class="category-page" id="${sectionId}">
+        <h2 class="category-heading">${escapeHtml(category)}</h2>
+        <div class="category-items">
+          ${categoryGifts.length > 0 ? categoryGifts.map((gift) => {
+            const index = gifts.indexOf(gift);
+            return `<article class="gift-card" style="animation-delay: ${Math.min(index, 7) * 50}ms">
+              <div class="gift-image">
+                <img src="${escapeAttribute(gift.image || fallbackImage)}" alt="${escapeAttribute(gift.name)}" onerror="this.src='${fallbackImage}'">
+                <span class="gift-tag">${escapeHtml(gift.tag || "New idea")}</span>
+              </div>
+              <div class="gift-info">
+                <button class="delete-button" type="button" data-delete="${index}" aria-label="Remove ${escapeAttribute(gift.name)}">×</button>
+                <h2>${escapeHtml(gift.name)}</h2>
+                <p>${escapeHtml(gift.description)}</p>
+                <a class="gift-link" href="${safeUrl(gift.link)}" target="_blank" rel="noopener noreferrer">See the original <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>`;
+          }).join("") : `<p class="category-empty">No items in this category yet.</p>`}
+        </div>
+      </section>
+    `;
   }).join("");
 }
 
