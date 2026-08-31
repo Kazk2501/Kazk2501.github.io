@@ -37,13 +37,23 @@
       <div class="toolbar-actions">
         <label class="search-wrap" for="search-input">
           <span aria-hidden="true">⌕</span>
-          <input id="search-input" type="search" placeholder="Search the list..." autocomplete="off">
+          <input id="search-input" type="search" placeholder="Search this category..." autocomplete="off">
         </label>
       </div>
     </section>
 
+    <nav class="category-nav" id="category-nav" aria-label="Gift categories">
+      <button class="category-button is-active" type="button" data-category="Plushies" aria-pressed="true">Plushies</button>
+      <button class="category-button" type="button" data-category="Models" aria-pressed="false">Models</button>
+      <button class="category-button" type="button" data-category="3D Printing" aria-pressed="false">3D Printing</button>
+      <button class="category-button" type="button" data-category="Tech" aria-pressed="false">Tech</button>
+      <button class="category-button" type="button" data-category="Food" aria-pressed="false">Food</button>
+      <button class="category-button" type="button" data-category="Experiences" aria-pressed="false">Experiences</button>
+      <button class="category-button" type="button" data-category="Medieval" aria-pressed="false">Medieval</button>
+    </nav>
+
     <section class="gift-grid" id="gift-grid" aria-live="polite"></section>
-    <p class="empty-state" id="empty-state" hidden>No ideas match that search. Try another word.</p>
+    <p class="empty-state" id="empty-state" hidden>No ideas match that search in this category.</p>
   </main>
 
   <footer class="site-footer">
