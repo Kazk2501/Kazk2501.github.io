@@ -1,63 +1,6 @@
 const categories = ["Plushies", "Models", "3D Printing", "Tech", "Food", "Experiences", "Medieval"];
 
-const starterGifts = [
-  {
-    name: "A huggable plush dragon",
-    description: "The kind of creature that makes a shelf feel a little more magical.",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85",
-    link: "https://www.etsy.com/search?q=dragon+plush",
-    tag: "Plushies",
-    category: "Plushies"
-  },
-  {
-    name: "A model train set",
-    description: "Tiny stations, tiny villages, and a surprisingly big dose of calm.",
-    image: "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=85",
-    link: "https://www.amazon.com/s?k=model+train+set",
-    tag: "Models",
-    category: "Models"
-  },
-  {
-    name: "A tiny 3D printer",
-    description: "For turning strange little ideas into real objects with very little patience.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=85",
-    link: "https://www.creality.com/",
-    tag: "3D Printing",
-    category: "3D Printing"
-  },
-  {
-    name: "Noise-cancelling headphones",
-    description: "A little bubble of focus for trains, planes, and pretending not to hear the blender.",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85",
-    link: "https://www.sony.com/headphones",
-    tag: "Tech",
-    category: "Tech"
-  },
-  {
-    name: "An excellent dinner date",
-    description: "Good food, good company, and absolutely no reason to check the time.",
-    image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=85",
-    link: "https://www.opentable.com/",
-    tag: "Food",
-    category: "Food"
-  },
-  {
-    name: "A weekend somewhere",
-    description: "The best kind of present: a change of scenery and a story to bring home.",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85",
-    link: "https://www.airbnb.com/",
-    tag: "Experiences",
-    category: "Experiences"
-  },
-  {
-    name: "A handcrafted medieval replica",
-    description: "A cathedral-level object for anyone who likes their decor with a little drama.",
-    image: "https://images.unsplash.com/photo-1528747045269-390fe33c19f2?auto=format&fit=crop&w=900&q=85",
-    link: "https://www.etsy.com/search?q=medieval+decor",
-    tag: "Medieval",
-    category: "Medieval"
-  }
-];
+const starterGifts = [];
 
 const storageKey = "gifts-for-kaz-list";
 let gifts = loadGifts();
