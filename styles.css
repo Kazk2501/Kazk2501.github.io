@@ -16,51 +16,23 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--paper);
+  background: linear-gradient(180deg, #1a120e 0%, #120d0b 100%);
   color: var(--ink);
   font-family: var(--sans);
-  background-image:
-    radial-gradient(circle at top, rgba(140, 98, 55, 0.26), transparent 28%),
-    linear-gradient(180deg, rgba(42, 27, 17, 0.94), rgba(16, 12, 11, 0.98)),
-    repeating-linear-gradient(180deg, rgba(245, 223, 179, 0.03) 0 2px, transparent 2px 11px);
 }
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.85;
-  background:
-    radial-gradient(circle at 12% 12%, rgba(177, 124, 52, 0.14), transparent 16%),
-    radial-gradient(circle at 84% 18%, rgba(179, 67, 52, 0.12), transparent 18%),
-    linear-gradient(90deg, transparent 0 49%, rgba(203, 169, 122, 0.08) 49% 51%, transparent 51% 100%);
-}
+body::before,
 body::after {
-  content: "✠";
-  position: fixed;
-  right: 18px;
-  bottom: 10px;
-  color: rgba(204, 159, 90, 0.45);
-  font-family: Georgia, serif;
-  font-size: 62px;
-  pointer-events: none;
-  transform: rotate(12deg);
-  text-shadow: 0 0 16px rgba(204, 159, 90, 0.25);
+  content: none;
 }
 button, input, textarea { font: inherit; }
 button { cursor: pointer; }
 .site-header, main, .site-footer { max-width: 1180px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
 .site-header { height: 86px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); position: relative; }
-.site-header::after, .toolbar::after { content: ""; position: absolute; width: 72px; height: 12px; background: radial-gradient(ellipse, var(--yellow) 0 1px, transparent 2px) 0 0 / 12px 12px; opacity: .9; }
-.site-header::after { right: 32px; bottom: -7px; }
 .brand { color: var(--ink); display: flex; align-items: center; gap: 12px; text-decoration: none; font-family: var(--serif); font-size: 21px; font-weight: 700; }
 .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; background: linear-gradient(135deg, #8b2d23, #5b1a18); border: 2px solid var(--yellow); border-radius: 50%; color: #f7e7bf; font-size: 18px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); }
 .header-note, .eyebrow, .list-count, .gift-tag, .meta-label { font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; }
 .header-note { color: var(--muted); }
 .intro { min-height: 400px; display: flex; justify-content: space-between; align-items: center; padding-top: 55px; padding-bottom: 42px; position: relative; }
-.intro::before, .intro::after { position: absolute; color: var(--yellow); opacity: .7; font-family: Georgia, serif; font-size: 42px; }
-.intro::before { content: "❧"; top: 48px; right: 5%; transform: scaleX(-1); }
-.intro::after { content: "❧"; bottom: 32px; left: 1%; }
 .eyebrow { margin: 0 0 18px; color: var(--yellow); }
 h1, h2 { font-family: var(--serif); font-weight: 600; line-height: .94; margin: 0; }
 h1 { font-size: clamp(64px, 10vw, 122px); letter-spacing: -.045em; text-shadow: 1px 2px 0 rgba(206, 171, 105, .2); }
@@ -70,7 +42,6 @@ h1 em { color: var(--yellow); font-style: normal; }
 .scribble { display: block; font-family: var(--serif); font-size: 20px; line-height: 1.1; }
 .tiny-sparkle { color: var(--yellow); font-size: 47px; line-height: 1; margin: 18px 0 0 60px; }
 .toolbar { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; }
-.toolbar::after { right: 0; top: -7px; }
 .list-count { color: var(--muted); }
 .list-count strong { color: var(--ink); font-size: 14px; margin-right: 4px; }
 .category-nav { display: grid; grid-template-columns: repeat(2, minmax(220px, 1fr)); gap: 18px; padding: 18px 0 8px; }
@@ -127,7 +98,6 @@ h1 em { color: var(--yellow); font-style: normal; }
 .delete-button { align-self: flex-end; background: none; border: 0; color: var(--muted); font-size: 18px; line-height: 1; margin: -5px -8px 0 0; padding: 5px 8px; }
 .delete-button:hover { color: var(--coral); }
 .add-panel { background: #3d3025; color: #f8e9c6; border: 1px solid var(--yellow); box-shadow: 5px 6px 0 rgba(91, 57, 28, .18); padding: 39px 42px 36px; margin: 0 0 90px; position: relative; }
-.add-panel::before { content: "✦  ✧  ✦"; position: absolute; top: 12px; right: 22px; color: var(--yellow); letter-spacing: 9px; }
 .panel-heading { position: relative; }
 .panel-heading .eyebrow { color: var(--yellow); }
 .panel-heading h2 { font-size: 42px; }
