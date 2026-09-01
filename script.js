@@ -69,7 +69,13 @@ function loadGifts() {
   try {
     const saved = localStorage.getItem(storageKey);
     if (!saved) return starterGifts;
+
     const parsed = JSON.parse(saved);
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      localStorage.removeItem(storageKey);
+      return starterGifts;
+    }
+
     return parsed.map((gift) => ({ ...gift, category: gift.category || categories[0] }));
   } catch {
     return starterGifts;
