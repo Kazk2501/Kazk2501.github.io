@@ -34,12 +34,6 @@
 
     <section class="toolbar" aria-label="Gift list controls">
       <div class="list-count"><strong>7</strong> <span>ideas to explore</span></div>
-      <div class="toolbar-actions">
-        <label class="search-wrap" for="search-input">
-          <span aria-hidden="true">⌕</span>
-          <input id="search-input" type="search" placeholder="Search gifts..." autocomplete="off" aria-label="Search gift ideas">
-        </label>
-      </div>
     </section>
 
     <nav class="category-nav" aria-label="Gift categories">
@@ -145,33 +139,5 @@
     <span>2026</span>
   </footer>
 
-  <script>
-    const searchInput = document.getElementById('search-input');
-    const giftCards = Array.from(document.querySelectorAll('.gift-card'));
-    const countElement = document.querySelector('.list-count strong');
-    const noResults = document.createElement('p');
-    noResults.className = 'empty-state';
-    noResults.textContent = 'No gift ideas match that search.';
-    noResults.hidden = true;
-    document.querySelector('.gift-grid').after(noResults);
-
-    function filterCards() {
-      const query = (searchInput.value || '').trim().toLowerCase();
-      let visibleCount = 0;
-
-      giftCards.forEach((card) => {
-        const text = card.textContent.toLowerCase();
-        const matches = !query || text.includes(query);
-        card.hidden = !matches;
-        if (matches) visibleCount += 1;
-      });
-
-      countElement.textContent = String(visibleCount);
-      noResults.hidden = visibleCount !== 0;
-    }
-
-    searchInput.addEventListener('input', filterCards);
-    filterCards();
-  </script>
 </body>
 </html>
