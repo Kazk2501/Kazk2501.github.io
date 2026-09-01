@@ -58,10 +58,17 @@ h1 em { color: var(--coral); font-style: normal; }
 .button:hover { transform: translateY(-2px); }
 .button-dark { background: var(--ink); color: #f8e9c6; border: 1px solid var(--yellow); }
 .button-coral { background: var(--coral); color: #f8e9c6; border: 1px solid #5f211d; }
-.gift-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 34px 0 90px; }
+.category-shell { max-width: 1180px; margin: 0 auto; padding: 0 32px 80px; }
+.category-header { max-width: 1180px; margin: 0 auto; padding: 22px 32px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.category-header .brand { font-size: 18px; }
+.category-back { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--coral); text-decoration: none; }
+.category-intro { padding: 42px 0 18px; }
+.category-intro h1 { font-size: clamp(52px, 8vw, 88px); }
+.gift-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; padding: 10px 0 90px; }
 .gift-card { display: flex; flex-direction: column; min-width: 0; background: var(--card); border: 1px solid var(--line); box-shadow: 4px 5px 0 rgba(91, 57, 28, .15); animation: rise .55s both; position: relative; }
 .gift-card::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(125, 48, 40, .22); pointer-events: none; z-index: 1; }
 .gift-image { position: relative; aspect-ratio: 1.12 / 1; background: var(--sage); overflow: hidden; }
+.gift-image--placeholder { display: grid; place-items: center; background: linear-gradient(135deg, rgba(125, 48, 40, .12), rgba(100, 120, 109, .5)); color: var(--ink); font-family: var(--mono); letter-spacing: .08em; text-transform: uppercase; font-size: 10px; }
 .gift-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
 .gift-card:hover .gift-image img { transform: scale(1.04); }
 .gift-tag { position: absolute; top: 14px; left: 14px; background: var(--yellow); padding: 7px 9px; color: var(--ink); }
