@@ -1,6 +1,55 @@
 const categories = ["Plushies", "Models", "3D Printing", "Tech", "Food", "Experiences", "Medieval"];
 
-const starterGifts = [];
+const starterGifts = [
+  {
+    name: "Savathun Plushie",
+    description: "The Destiny: Savathûn plush brings the Witch Queen to life with a soft, sinister look and a lot of cosmic personality.",
+    image: "images/Savathun_Destiny_Plushie_PL_1.jpg",
+    link: "https://numskull.com/collections/destiny/products/destiny-plush-savathun-the-witch-queen",
+    tag: "Plushies",
+    category: "Plushies"
+  },
+  {
+    name: "Starhorse Plushie",
+    description: "A soft celestial companion inspired by Destiny 2’s mysterious starhorse, perfect for brave collectors and very cozy shelves.",
+    image: "images/Starhorse_Destiny2_Plush_PL_1.jpg",
+    link: "https://numskull.com/collections/destiny/products/destiny-plush-starhorse",
+    tag: "Plushies",
+    category: "Plushies"
+  },
+  {
+    name: "Atheon Plushie",
+    description: "An adorable take on Atheon with a soft, glow-detail design that turns a raid boss into a collectible cuddle buddy.",
+    image: "images/Atheon_Destiny_Plush_PL_7.webp",
+    link: "https://numskull.com/collections/destiny/products/destiny-plush-atheon-time-s-conflux",
+    tag: "Plushies",
+    category: "Plushies"
+  },
+  {
+    name: "Pouka Plushie",
+    description: "A cute, comforting little companion from Destiny 2 that feels like the perfect cozy collectible for long gaming nights.",
+    image: "images/Pouka_Destiny_Plush_WB_2000x_3-ezgif.com-resize.webp",
+    link: "https://numskull.com/collections/destiny/products/destiny-plush-pouka",
+    tag: "Plushies",
+    category: "Plushies"
+  },
+  {
+    name: "Oryx Plushie",
+    description: "A soft, detailed plush version of the Taken King that captures his intimidating presence in a much friendlier form.",
+    image: "images/Oryx_Destiny_Plush_PL_1.jpg",
+    link: "https://numskull.com/collections/destiny/products/official-destiny-2-oryx-the-taken-king-plush",
+    tag: "Plushies",
+    category: "Plushies"
+  },
+  {
+    name: "Fallen Baby Plushie",
+    description: "A tiny, weirdly adorable Fallen plush that feels equal parts creepy, charming, and perfect for a Destiny fan collection.",
+    image: "images/fallen-baby-plush-destiny-1_bea4bcae-8929-4984-831c-d3f8827d6556.jpg",
+    link: "https://numskull.com/collections/destiny/products/destiny-plush-fallen-baby",
+    tag: "Plushies",
+    category: "Plushies"
+  }
+];
 
 const storageKey = "gifts-for-kaz-list";
 let gifts = loadGifts();
