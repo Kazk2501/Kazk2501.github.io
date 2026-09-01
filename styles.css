@@ -114,6 +114,20 @@ h1 em { color: var(--yellow); font-style: normal; }
   font-size: 13px;
 }
 .category-button:hover, .category-button.is-active { background: linear-gradient(135deg, var(--coral), #5b1a18); color: #f8e9c6; border-color: var(--yellow); transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0, 0, 0, .35); }
+.model-subnav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 8px;
+}
+.model-subnav .category-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 18px;
+  text-align: center;
+}
 .gift-picker {
   margin: 26px 0 18px;
   padding: 28px 30px 24px;
@@ -147,8 +161,8 @@ h1 em { color: var(--yellow); font-style: normal; }
   min-height: 46px;
   padding: 10px 14px;
   border: 1px solid var(--line);
-  background: rgba(0, 0, 0, .2);
-  color: var(--ink);
+  background: rgba(22, 18, 16, 0.9);
+  color: #ffffff;
   font-size: 16px;
 }
 #random-gift-button {
@@ -170,23 +184,56 @@ h1 em { color: var(--yellow); font-style: normal; }
   line-height: 1.6;
   color: var(--ink);
 }
-.random-gift-result strong {
+.randomized-gift-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+  gap: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: 4px 5px 0 rgba(91, 57, 28, .15);
+  overflow: hidden;
+}
+.randomized-gift-image {
+  position: relative;
+  min-height: 240px;
+  background: var(--sage);
+}
+.randomized-gift-image img {
   display: block;
-  margin-bottom: 4px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.randomized-gift-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 22px 18px;
+  background-image: repeating-linear-gradient(0deg, rgba(121, 79, 36, .04) 0 1px, transparent 1px 5px);
+}
+.randomized-gift-info strong {
+  display: block;
+  margin-bottom: 10px;
   color: var(--yellow);
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-.random-gift-result span {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 1.3em;
+.randomized-gift-info h3 {
+  margin: 0 0 8px;
+  font-size: clamp(24px, 2vw, 34px);
+  line-height: 1.1;
+}
+.randomized-gift-info p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.6;
 }
 .picker-link {
   display: inline-flex;
   align-items: center;
+  width: fit-content;
   color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid var(--yellow);

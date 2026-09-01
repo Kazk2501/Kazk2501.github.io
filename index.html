@@ -196,61 +196,53 @@
 
     const randomGiftMap = {
       plushies: [
-        'Savathun Plushie',
-        'Starhorse Plushie',
-        'Atheon Plushie',
-        'Pouka Plushie',
-        'Oryx Plushie',
-        'Fallen Baby Plushie',
-        'Cabal Warbeast Plushie',
-        'Hive Worm Plushie',
-        'Golgoroth Plushie'
+        { title: 'Savathun Plushie', image: 'images/Savathun_Destiny_Plushie_PL_1.jpg', description: 'A soft, sinister take on the Witch Queen that feels perfect for a Destiny collector.', link: 'Plushies.html' },
+        { title: 'Starhorse Plushie', image: 'images/Starhorse_Destiny2_Plush_PL_1.jpg', description: 'A cozy celestial companion with a polished collectible look and plenty of shelf presence.', link: 'Plushies.html' },
+        { title: 'Atheon Plushie', image: 'images/Atheon_Destiny_Plush_PL_7.webp', description: 'A plush version of a raid boss that somehow looks adorable instead of threatening.', link: 'Plushies.html' },
+        { title: 'Pouka Plushie', image: 'images/Pouka_Destiny_Plush_WB_2000x_3-ezgif.com-resize.webp', description: 'A cuddly little cosmic companion with a gentle, collectible design.', link: 'Plushies.html' },
+        { title: 'Oryx Plushie', image: 'images/Oryx_Destiny_Plush_PL_1.jpg', description: 'The Taken King, softened into a weirdly charming plush form.', link: 'Plushies.html' },
+        { title: 'Fallen Baby Plushie', image: 'images/fallen-baby-plush-destiny-1_bea4bcae-8929-4984-831c-d3f8827d6556.jpg', description: 'Tiny, eerie, and strangely adorable in the exact way a Destiny fan would love.', link: 'Plushies.html' },
+        { title: 'Cabal Warbeast Plushie', image: 'images/CabalWarBeast_DestinyPlush_PL_1.jpg', description: 'A plush version of a classic Destiny enemy with a surprisingly friendly silhouette.', link: 'Plushies.html' },
+        { title: 'Hive Worm Plushie', image: 'images/hiveworm_plush_destiny_pl_1_834b174d-38b0-4e4e-88f2-afa43c43ca24.webp', description: 'A creepy little worm plush with enough lore weight to feel like a real collector item.', link: 'Plushies.html' },
+        { title: 'Golgoroth Plushie', image: 'images/Golgoroth_Destiny_Plushie_PL_1.jpg', description: 'The giant boss becomes a soft, displayable collectible in a wonderfully silly way.', link: 'Plushies.html' }
       ],
       models: [
-        'Trygon',
-        'Screamer-Killer Brood',
-        'Exocrene Lead',
-        'Tervigon',
-        'Biovore',
-        'Norn Emissary',
-        'C\'tan Shard of the Void Dragon',
-        'Ophydian Destroyers',
-        'Monolith',
-        'Skorpekh Destroyers',
-        'Hexmark Destroyer',
-        'Night Scythe',
-        'Canoptek Spyder',
-        'Illuminor Szeras',
-        'C\'tan Shard of the Nightbringer',
-        'Helbrute',
-        'Maulerfiend',
-        'Lord Discordant on a Helstalker',
-        'Venom Crawler and Obliterators'
+        { title: 'Trygon', image: 'images/99120106019_TrygonNEW01.jpg', description: 'A Tyranid monster with brutal presence and a dramatic display profile.', link: 'Models.html' },
+        { title: 'Screamer-Killer Brood', image: 'images/99120106031_ScreamerKillerBrood01.jpg', description: 'A hive fleet centerpiece with a vicious, kinetic silhouette.', link: 'Models.html' },
+        { title: 'Exocrene Lead', image: 'images/99120106056_ExocreneLead.jpg', description: 'A striking Tyranid unit with a sculpted, aggressive look and excellent display value.', link: 'Models.html' },
+        { title: 'Tervigon', image: 'images/99120106054_TYRTyrannofexLeadALT.jpg', description: 'Massive, iconic, and packed with heavy-hive character.', link: 'Models.html' },
+        { title: 'Biovore', image: 'images/99120106065_Biovore1.jpg', description: 'A classic Tyranid support unit with a strong visual punch on the shelf.', link: 'Models.html' },
+        { title: 'Norn Emissary', image: 'images/99120106064_NornEmissary1.jpg', description: 'A hulking, imposing centerpiece choice with excellent lore flavor.', link: 'Models.html' },
+        { title: 'Night Scythe', image: 'images/99120110065_DoomScytheLead.jpg', description: 'A fast, ominous Necron flyer with plenty of futuristic menace.', link: 'Models.html' },
+        { title: 'Monolith', image: 'images/99120110043_NECMonolithLead.jpg', description: 'A towering Necron centerpiece with a dramatic, ancient silhouette.', link: 'Models.html' },
+        { title: 'Canoptek Spyder', image: 'images/99120110061_CanoptekSpyderLead.jpg', description: 'An intricate, mechanical little menace ideal for a dark display shelf.', link: 'Models.html' },
+        { title: 'Helbrute', image: 'images/99120102043_CSMHelbrute01.jpg', description: 'A brutal Chaos vehicle with heavy damage and legendary presence.', link: 'Models.html' },
+        { title: 'Maulerfiend', image: 'images/99120102089_CSMForgefiend02.jpg', description: 'A powerful Chaos construct with a dramatic, aggressive silhouette.', link: 'Models.html' },
+        { title: 'Warpforged Lord', image: 'images/99120102143_CSMWarpforgedLead.jpg', description: 'A darkly ornate Chaos leader with intense sci-fi style.', link: 'Models.html' }
       ],
       'three-d-printing': [
-        'Prusa CORE One+',
-        'Original Prusa MK4S',
-        'Prusa Pro HT90',
-        'Prusa Nozzle E3D DiamondBack',
-        'Nextruder Hotend Brass High Flow'
+        { title: 'Prusa CORE One+', image: 'images/ba20c3dd-c813-4042-871e-6ada97512ed2.jpg', description: 'A sleek 3D printer setup with a serious maker-machine vibe.', link: '3D%20Printing.html' },
+        { title: 'Original Prusa MK4S', image: 'images/226b1536-4128-44d9-9c7c-50c4a8697957.jpg', description: 'A premium 3D printer pick for anyone who wants reliable, high-quality prints.', link: '3D%20Printing.html' },
+        { title: 'Prusa Pro HT90', image: 'images/f3de01af-4bf0-4612-8986-4d27c0710ea7.jpg', description: 'A high-temp workhorse for ambitious printing and sharper prototyping.', link: '3D%20Printing.html' },
+        { title: 'Nozzle Upgrade Kit', image: 'images/a7de6174-abe1-46c9-ae35-46254e68097d.avif', description: 'A practical improvement that makes precise printing even more satisfying.', link: '3D%20Printing.html' }
       ],
       tech: [
-        'Flipper Zero',
-        'WiFi Devboard for Flipper Zero',
-        'ASUS ROG Strix G16 Gaming Laptop',
-        'Tannis AI'
+        { title: 'Flipper Zero', image: 'images/product_flipper-zero_1.webp', description: 'A compact multi-tool for curious tinkerers and hardware hobbyists.', link: 'Tech.html' },
+        { title: 'WiFi Devboard', image: 'images/product_wifi-devboard_1.webp', description: 'A perfect little board for experimentation and playful engineering projects.', link: 'Tech.html' },
+        { title: 'ASUS ROG Strix G16', image: 'images/1e76c735-eea8-4fd5-9466-83dc5a1f8fa4.webp', description: 'A powerful gaming laptop built for serious work and play.', link: 'Tech.html' },
+        { title: 'Tannis AI', image: 'images/PLUG_AND_PLAY_INTO_ANY_PC_LAPTOP_NEEDED_5.webp', description: 'A practical tech upgrade for a modern setup with a strong utility angle.', link: 'Tech.html' }
       ],
       experiences: [
-        'New York Renaissance Faire Tickets',
-        'King Richard\'s Faire Tickets',
-        'Sabaton Tickets',
-        'Twenty-Sided Tavern Tickets'
+        { title: 'New York Renaissance Faire Tickets', image: 'images/logo-385.png', description: 'A themed outing with costumes, food, and a full medieval day out.', link: 'Experiences.html' },
+        { title: 'King Richard\'s Faire Tickets', image: 'images/84869c_d4646af3cea94d60936c9be4800060d0~mv2.jpeg', description: 'A charming festival day with a strong “live in the story” energy.', link: 'Experiences.html' },
+        { title: 'Sabaton Tickets', image: 'images/images.jpg', description: 'A loud, energetic concert experience with huge atmosphere and great energy.', link: 'Experiences.html' },
+        { title: 'Twenty-Sided Tavern Tickets', image: 'images/Dungeons_&_Dragons_The_Twenty-Sided_Tavern_logo.jpg', description: 'A tabletop night out with a story-first vibe and great group energy.', link: 'Experiences.html' }
       ],
       medieval: [
-        'Colander Klappenvisor Helm',
-        'Two-Handed Axe',
-        'King\'s Crown Mace',
-        'Falcata "Latro"'
+        { title: 'Colander Klappenvisor Helm', image: 'images/COLANDER1.webp', description: 'A striking medieval-inspired helm with dramatic presence and real historical flavor.', link: 'Medieval.html' },
+        { title: 'Two-Handed Axe', image: 'images/Two-handed-axe-1.webp', description: 'A bold, brutal weapon piece with strong visual weight and fantasy appeal.', link: 'Medieval.html' },
+        { title: 'King\'s Crown Mace', image: 'images/ac5c11_d83ce5d5c478405fa1155261a18dc7c6~mv2.avif', description: 'A dramatic ceremonial-style melee piece that looks fantastic on display.', link: 'Medieval.html' },
+        { title: 'Falcata "Latro"', image: 'images/ac5c11_fdbc7e8983b14e4fbfefcba923bd16e9~mv2.avif', description: 'A curved, elegant blade with just the right amount of exotic flair.', link: 'Medieval.html' }
       ]
     };
 
@@ -309,9 +301,18 @@
       }[category];
 
       randomGiftResult.innerHTML = `
-        <strong>Random pick:</strong>
-        <span>${pick}</span>
-        <a href="${page}" class="picker-link">View ${categoryNames[category]} category</a>
+        <article class="randomized-gift-card">
+          <div class="randomized-gift-image">
+            <img src="${pick.image}" alt="${pick.title}">
+            <span class="gift-tag">${categoryNames[category]}</span>
+          </div>
+          <div class="randomized-gift-info">
+            <strong>Random pick:</strong>
+            <h3>${pick.title}</h3>
+            <p>${pick.description}</p>
+            <a href="${page}" class="picker-link">View ${categoryNames[category]} category</a>
+          </div>
+        </article>
       `;
     });
 
