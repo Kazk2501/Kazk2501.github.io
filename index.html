@@ -149,6 +149,11 @@
     const searchInput = document.getElementById('search-input');
     const giftCards = Array.from(document.querySelectorAll('.gift-card'));
     const countElement = document.querySelector('.list-count strong');
+    const noResults = document.createElement('p');
+    noResults.className = 'empty-state';
+    noResults.textContent = 'No gift ideas match that search.';
+    noResults.hidden = true;
+    document.querySelector('.gift-grid').after(noResults);
 
     function filterCards() {
       const query = (searchInput.value || '').trim().toLowerCase();
@@ -162,6 +167,7 @@
       });
 
       countElement.textContent = String(visibleCount);
+      noResults.hidden = visibleCount !== 0;
     }
 
     searchInput.addEventListener('input', filterCards);
