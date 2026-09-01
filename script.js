@@ -68,16 +68,24 @@ grid.addEventListener("click", handleCardClick);
 function loadGifts() {
   try {
     const saved = localStorage.getItem(storageKey);
-    if (!saved) return starterGifts;
+    if (!saved) {
+      localStorage.setItem(storageKey, JSON.stringify(starterGifts));
+      return starterGifts;
+    }
 
     const parsed = JSON.parse(saved);
-    if (!Array.isArray(parsed) || parsed.length === 0) {
+    const hasUsableItems = Array.isArray(parsed) && parsed.length > 0 && parsed.every((gift) => gift && typeof gift === "object");
+
+    if (!hasUsableItems) {
       localStorage.removeItem(storageKey);
+      localStorage.setItem(storageKey, JSON.stringify(starterGifts));
       return starterGifts;
     }
 
     return parsed.map((gift) => ({ ...gift, category: gift.category || categories[0] }));
   } catch {
+    localStorage.removeItem(storageKey);
+    localStorage.setItem(storageKey, JSON.stringify(starterGifts));
     return starterGifts;
   }
 }
