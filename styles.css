@@ -47,8 +47,8 @@ h1 em { color: var(--coral); font-style: normal; }
 .search-wrap { display: flex; align-items: center; gap: 8px; width: 210px; border-bottom: 1px solid var(--ink); padding: 5px 0; }
 .search-wrap span { font-size: 22px; line-height: 1; }
 .search-wrap input { min-width: 0; width: 100%; background: none; border: 0; outline: 0; color: var(--ink); font-size: 12px; }
-.category-nav { display: flex; flex-wrap: wrap; gap: 10px; padding: 18px 0 8px; }
-.category-button { display: inline-block; border: 1px solid var(--line); background: rgba(255, 255, 255, .18); color: var(--ink); padding: 10px 14px; font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background .2s, border-color .2s, transform .2s; }
+.category-nav { display: flex; flex-wrap: wrap; gap: 14px; padding: 18px 0 8px; }
+.category-button { display: inline-block; border: 1px solid var(--line); background: rgba(255, 255, 255, .18); color: var(--ink); padding: 14px 18px; font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background .2s, border-color .2s, transform .2s; min-width: 138px; text-align: center; }
 .category-button:hover, .category-button.is-active { background: var(--coral); color: #f8e9c6; border-color: var(--coral); transform: translateY(-1px); }
 .category-page { scroll-margin-top: 20px; margin-bottom: 36px; }
 .category-heading { margin: 0 0 18px; font-family: var(--serif); font-size: 32px; }
