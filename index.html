@@ -35,10 +35,10 @@
     <section class="toolbar" aria-label="Gift list controls">
       <div class="list-count"><strong>7</strong> <span>ideas to explore</span></div>
       <div class="toolbar-actions">
-        <span class="search-wrap" aria-label="Search is not needed on this simple version">
+        <label class="search-wrap" for="search-input">
           <span aria-hidden="true">⌕</span>
-          <span>Simple list view</span>
-        </span>
+          <input id="search-input" type="search" placeholder="Search gifts..." autocomplete="off" aria-label="Search gift ideas">
+        </label>
       </div>
     </section>
 
@@ -144,5 +144,28 @@
     <span class="footer-line" aria-hidden="true"></span>
     <span>2026</span>
   </footer>
+
+  <script>
+    const searchInput = document.getElementById('search-input');
+    const giftCards = Array.from(document.querySelectorAll('.gift-card'));
+    const countElement = document.querySelector('.list-count strong');
+
+    function filterCards() {
+      const query = (searchInput.value || '').trim().toLowerCase();
+      let visibleCount = 0;
+
+      giftCards.forEach((card) => {
+        const text = card.textContent.toLowerCase();
+        const matches = !query || text.includes(query);
+        card.hidden = !matches;
+        if (matches) visibleCount += 1;
+      });
+
+      countElement.textContent = String(visibleCount);
+    }
+
+    searchInput.addEventListener('input', filterCards);
+    filterCards();
+  </script>
 </body>
 </html>
