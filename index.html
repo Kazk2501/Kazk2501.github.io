@@ -27,6 +27,10 @@
         <p class="intro-text">A lovingly curated list of things I would be very happy to unwrap. Browse around, pick a favorite, and take all the credit.</p>
       </div>
       <div class="intro-aside">
+        <div class="last-updated-box" aria-live="polite">
+          <span class="last-updated-label">Last updated</span>
+          <span id="last-updated-date">09/01/2026</span>
+        </div>
         <span class="scribble" aria-hidden="true">for the<br>thoughtful ones</span>
         <div class="tiny-sparkle" aria-hidden="true">✳</div>
       </div>
@@ -56,6 +60,19 @@
     <span class="footer-line" aria-hidden="true"></span>
     <span>2026</span>
   </footer>
+
+  <script>
+    const lastUpdated = new Date('2026-09-01T00:00:00');
+    const lastUpdatedDate = document.getElementById('last-updated-date');
+
+    if (lastUpdatedDate) {
+      lastUpdatedDate.textContent = lastUpdated.toLocaleDateString('en-US', {
+        month: '2-digit',
+        day: '2-digit',
+        year: 'numeric'
+      });
+    }
+  </script>
 
 </body>
 </html>
