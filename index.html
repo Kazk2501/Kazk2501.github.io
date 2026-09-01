@@ -41,7 +41,7 @@
     </section>
 
     <nav class="category-nav" aria-label="Gift categories">
-      <a class="category-button" href="Plushies.html">
+      <a class="category-button" href="Plushies.html" data-category="plushies">
         <span class="category-gallery" aria-hidden="true">
           <img src="images/Savathun_Destiny_Plushie_PL_1.jpg" alt="Plushies example 1">
           <img src="images/Starhorse_Destiny2_Plush_PL_1.jpg" alt="Plushies example 2">
@@ -50,7 +50,7 @@
         </span>
         <span class="category-label">Plushies</span>
       </a>
-      <a class="category-button" href="Models.html">
+      <a class="category-button" href="Models.html" data-category="models">
         <span class="category-gallery" aria-hidden="true">
           <img src="images/99120106019_TrygonNEW01.jpg" alt="Models example 1">
           <img src="images/99120106031_ScreamerKillerBrood01.jpg" alt="Models example 2">
@@ -59,7 +59,7 @@
         </span>
         <span class="category-label">Models</span>
       </a>
-      <a class="category-button" href="3D%20Printing.html">
+      <a class="category-button" href="3D%20Printing.html" data-category="three-d-printing">
         <span class="category-gallery" aria-hidden="true">
           <img src="images/ba20c3dd-c813-4042-871e-6ada97512ed2.jpg" alt="3D Printing example 1">
           <img src="images/226b1536-4128-44d9-9c7c-50c4a8697957.jpg" alt="3D Printing example 2">
@@ -68,7 +68,7 @@
         </span>
         <span class="category-label">3D Printing</span>
       </a>
-      <a class="category-button" href="Tech.html">
+      <a class="category-button" href="Tech.html" data-category="tech">
         <span class="category-gallery" aria-hidden="true">
           <img src="images/product_flipper-zero_1.webp" alt="Tech example 1">
           <img src="images/product_wifi-devboard_1.webp" alt="Tech example 2">
@@ -77,7 +77,7 @@
         </span>
         <span class="category-label">Tech</span>
       </a>
-      <a class="category-button" href="Experiences.html">
+      <a class="category-button" href="Experiences.html" data-category="experiences">
         <span class="category-gallery" aria-hidden="true">
           <img src="images/logo-385.png" alt="Experiences example 1">
           <img src="images/84869c_d4646af3cea94d60936c9be4800060d0~mv2.jpeg" alt="Experiences example 2">
@@ -86,7 +86,7 @@
         </span>
         <span class="category-label">Experiences</span>
       </a>
-      <a class="category-button" href="Medieval.html">
+      <a class="category-button" href="Medieval.html" data-category="medieval">
         <span class="category-gallery" aria-hidden="true">
           <img src="images/COLANDER1.webp" alt="Medieval example 1">
           <img src="images/Two-handed-axe-1.webp" alt="Medieval example 2">
@@ -110,6 +110,90 @@
   </footer>
 
   <script>
+    const categoryImages = {
+      plushies: [
+        'images/Savathun_Destiny_Plushie_PL_1.jpg',
+        'images/Starhorse_Destiny2_Plush_PL_1.jpg',
+        'images/Atheon_Destiny_Plush_PL_7.webp',
+        'images/Pouka_Destiny_Plush_WB_2000x_3-ezgif.com-resize.webp',
+        'images/Oryx_Destiny_Plush_PL_1.jpg',
+        'images/fallen-baby-plush-destiny-1_bea4bcae-8929-4984-831c-d3f8827d6556.jpg',
+        'images/CabalWarBeast_DestinyPlush_PL_1.jpg',
+        'images/hiveworm_plush_destiny_pl_1_834b174d-38b0-4e4e-88f2-afa43c43ca24.webp',
+        'images/Golgoroth_Destiny_Plushie_PL_1.jpg'
+      ],
+      models: [
+        'images/99120106019_TrygonNEW01.jpg',
+        'images/99120106031_ScreamerKillerBrood01.jpg',
+        'images/99120106056_ExocreneLead.jpg',
+        'images/99120106054_TYRTyrannofexLeadALT.jpg',
+        'images/99120106065_Biovore1.jpg',
+        'images/99120106064_NornEmissary1.jpg',
+        'images/99120110054_CTanShardoftheVoidDragonLead.jpg',
+        'images/99120110053_NECOphydianDestroyersLead.jpg',
+        'images/99120110043_NECMonolithLead.jpg',
+        'images/99120110051_SkorpekhDestroyersLead.jpg',
+        'images/99120110048_HexmarkDestroyerLead.jpg',
+        'images/99120110065_DoomScytheLead.jpg',
+        'images/99120110061_CanoptekSpyderLead.jpg',
+        'images/99120110049_IlluminorSzerasLead.jpg',
+        'images/99120110088_NecronsCtanShardOfTheNightbringer01.jpg',
+        'images/99120102043_CSMHelbrute01.jpg',
+        'images/99120102089_CSMForgefiend02.jpg',
+        'images/99120102100_CSMVexMachinator01.jpg',
+        'images/99120102143_CSMWarpforgedLead.jpg'
+      ],
+      'three-d-printing': [
+        'images/ba20c3dd-c813-4042-871e-6ada97512ed2.jpg',
+        'images/226b1536-4128-44d9-9c7c-50c4a8697957.jpg',
+        'images/f3de01af-4bf0-4612-8986-4d27c0710ea7.jpg',
+        'images/a7de6174-abe1-46c9-ae35-46254e68097d.avif',
+        'images/3653827e-0c0d-4070-abd4-b73d340d426c.jpg'
+      ],
+      tech: [
+        'images/product_flipper-zero_1.webp',
+        'images/product_wifi-devboard_1.webp',
+        'images/1e76c735-eea8-4fd5-9466-83dc5a1f8fa4.webp',
+        'images/PLUG_AND_PLAY_INTO_ANY_PC_LAPTOP_NEEDED_5.webp'
+      ],
+      experiences: [
+        'images/logo-385.png',
+        'images/84869c_d4646af3cea94d60936c9be4800060d0~mv2.jpeg',
+        'images/images.jpg',
+        'images/Dungeons_&_Dragons_The_Twenty-Sided_Tavern_logo.jpg',
+        'images/DSC_1474-Edit-2.jpeg'
+      ],
+      medieval: [
+        'images/COLANDER1.webp',
+        'images/Two-handed-axe-1.webp',
+        'images/ac5c11_d83ce5d5c478405fa1155261a18dc7c6~mv2.avif',
+        'images/a7de6174-abe1-46c9-ae35-46254e68097d.avif',
+        'images/ac5c11_fdbc7e8983b14e4fbfefcba923bd16e9~mv2.avif'
+      ]
+    };
+
+    function shuffle(array) {
+      const copy = [...array];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    const categoryButtons = document.querySelectorAll('.category-button');
+    categoryButtons.forEach((button) => {
+      const category = button.dataset.category;
+      const galleryImages = button.querySelectorAll('.category-gallery img');
+      const availableImages = categoryImages[category] || [];
+      const chosenImages = shuffle(availableImages).slice(0, Math.min(galleryImages.length, availableImages.length));
+
+      galleryImages.forEach((img, index) => {
+        img.src = chosenImages[index] || availableImages[index % availableImages.length] || img.src;
+        img.alt = `${button.textContent.trim()} example ${index + 1}`;
+      });
+    });
+
     const lastUpdated = new Date('2026-09-01T00:00:00');
     const lastUpdatedDate = document.getElementById('last-updated-date');
 
