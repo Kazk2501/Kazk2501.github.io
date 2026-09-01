@@ -61,7 +61,8 @@ h1 em { color: var(--coral); font-style: normal; }
 .category-shell { max-width: 1180px; margin: 0 auto; padding: 0 32px 80px; }
 .category-header { max-width: 1180px; margin: 0 auto; padding: 22px 32px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .category-header .brand { font-size: 18px; }
-.category-back { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--coral); text-decoration: none; }
+.category-back { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 18px; border: 1px solid var(--line); background: rgba(255, 255, 255, .12); color: var(--ink); font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background .2s, border-color .2s, transform .2s; }
+.category-back:hover { background: var(--coral); color: #f8e9c6; border-color: var(--coral); transform: translateY(-1px); }
 .category-intro { padding: 42px 0 18px; }
 .category-intro h1 { font-size: clamp(52px, 8vw, 88px); }
 .gift-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; padding: 10px 0 90px; }
