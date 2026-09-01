@@ -97,6 +97,28 @@
       </a>
     </nav>
 
+    <section class="gift-picker" aria-label="Random gift picker">
+      <div class="picker-header">
+        <p class="eyebrow">Random pick</p>
+        <h2>Choose a category, then let fate decide.</h2>
+      </div>
+      <div class="picker-controls">
+        <label for="gift-category-select">Gift category</label>
+        <select id="gift-category-select" aria-label="Select gift category">
+          <option value="plushies">Plushies</option>
+          <option value="models">Models</option>
+          <option value="three-d-printing">3D Printing</option>
+          <option value="tech">Tech</option>
+          <option value="experiences">Experiences</option>
+          <option value="medieval">Medieval</option>
+        </select>
+        <button id="random-gift-button" type="button">Pick a random gift</button>
+      </div>
+      <div id="random-gift-result" class="random-gift-result" aria-live="polite">
+        <p>Select a category and I'll choose something for you.</p>
+      </div>
+    </section>
+
     <p class="disclaimer">
       <strong>Disclaimer:</strong> I do not expect any one person to spend well over 50$ on anything, especially the medieval or models items. Please only spend what you feel comfortable spending, or team up with someone else as a group gift.
     </p>
@@ -172,6 +194,66 @@
       ]
     };
 
+    const randomGiftMap = {
+      plushies: [
+        'Savathun Plushie',
+        'Starhorse Plushie',
+        'Atheon Plushie',
+        'Pouka Plushie',
+        'Oryx Plushie',
+        'Fallen Baby Plushie',
+        'Cabal Warbeast Plushie',
+        'Hive Worm Plushie',
+        'Golgoroth Plushie'
+      ],
+      models: [
+        'Trygon',
+        'Screamer-Killer Brood',
+        'Exocrene Lead',
+        'Tervigon',
+        'Biovore',
+        'Norn Emissary',
+        'C\'tan Shard of the Void Dragon',
+        'Ophydian Destroyers',
+        'Monolith',
+        'Skorpekh Destroyers',
+        'Hexmark Destroyer',
+        'Night Scythe',
+        'Canoptek Spyder',
+        'Illuminor Szeras',
+        'C\'tan Shard of the Nightbringer',
+        'Helbrute',
+        'Maulerfiend',
+        'Lord Discordant on a Helstalker',
+        'Venom Crawler and Obliterators'
+      ],
+      'three-d-printing': [
+        'Prusa CORE One+',
+        'Original Prusa MK4S',
+        'Prusa Pro HT90',
+        'Prusa Nozzle E3D DiamondBack',
+        'Nextruder Hotend Brass High Flow'
+      ],
+      tech: [
+        'Flipper Zero',
+        'WiFi Devboard for Flipper Zero',
+        'ASUS ROG Strix G16 Gaming Laptop',
+        'Tannis AI'
+      ],
+      experiences: [
+        'New York Renaissance Faire Tickets',
+        'King Richard\'s Faire Tickets',
+        'Sabaton Tickets',
+        'Twenty-Sided Tavern Tickets'
+      ],
+      medieval: [
+        'Colander Klappenvisor Helm',
+        'Two-Handed Axe',
+        'King\'s Crown Mace',
+        'Falcata "Latro"'
+      ]
+    };
+
     function shuffle(array) {
       const copy = [...array];
       for (let i = copy.length - 1; i > 0; i--) {
@@ -192,6 +274,45 @@
         img.src = chosenImages[index] || availableImages[index % availableImages.length] || img.src;
         img.alt = `${button.textContent.trim()} example ${index + 1}`;
       });
+    });
+
+    const categorySelect = document.getElementById('gift-category-select');
+    const randomGiftButton = document.getElementById('random-gift-button');
+    const randomGiftResult = document.getElementById('random-gift-result');
+
+    randomGiftButton.addEventListener('click', () => {
+      const category = categorySelect.value;
+      const options = randomGiftMap[category] || [];
+
+      if (!options.length) {
+        randomGiftResult.innerHTML = '<p>No gifts available in that category yet.</p>';
+        return;
+      }
+
+      const pick = options[Math.floor(Math.random() * options.length)];
+      const categoryNames = {
+        plushies: 'Plushies',
+        models: 'Models',
+        'three-d-printing': '3D Printing',
+        tech: 'Tech',
+        experiences: 'Experiences',
+        medieval: 'Medieval'
+      };
+
+      const page = {
+        plushies: 'Plushies.html',
+        models: 'Models.html',
+        'three-d-printing': '3D%20Printing.html',
+        tech: 'Tech.html',
+        experiences: 'Experiences.html',
+        medieval: 'Medieval.html'
+      }[category];
+
+      randomGiftResult.innerHTML = `
+        <strong>Random pick:</strong>
+        <span>${pick}</span>
+        <a href="${page}" class="picker-link">View ${categoryNames[category]} category</a>
+      `;
     });
 
     const lastUpdated = new Date('2026-09-01T00:00:00');

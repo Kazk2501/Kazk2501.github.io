@@ -114,6 +114,83 @@ h1 em { color: var(--yellow); font-style: normal; }
   font-size: 13px;
 }
 .category-button:hover, .category-button.is-active { background: linear-gradient(135deg, var(--coral), #5b1a18); color: #f8e9c6; border-color: var(--yellow); transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0, 0, 0, .35); }
+.gift-picker {
+  margin: 26px 0 18px;
+  padding: 28px 30px 24px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid var(--line);
+  box-shadow: 4px 5px 0 rgba(91, 57, 28, .15);
+}
+.picker-header h2 {
+  margin-top: 10px;
+  font-size: clamp(26px, 3vw, 42px);
+}
+.picker-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: end;
+  margin-top: 20px;
+}
+.picker-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.picker-controls select {
+  min-width: 220px;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, .2);
+  color: var(--ink);
+  font-size: 16px;
+}
+#random-gift-button {
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--yellow);
+  background: linear-gradient(135deg, var(--coral), #5b1a18);
+  color: #f8e9c6;
+  font-family: var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.random-gift-result {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.random-gift-result strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--yellow);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.random-gift-result span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+.picker-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--yellow);
+}
 .category-page { scroll-margin-top: 20px; margin-bottom: 36px; }
 .category-heading { margin: 0 0 18px; font-family: var(--serif); font-size: 32px; }
 .category-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
